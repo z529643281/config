@@ -1,14 +1,21 @@
 sp:
   user-service:
     users: "[{\"id\":7, \"username\":\"abc\",\"password\":\"123\"},{\"id\":8, \"username\":\"def\",\"password\":\"456\"},{\"id\":9, \"username\":\"ghi\",\"password\":\"789\"}]"
+  
 
 spring:
+  profiles:
+    active: user-service-dev
   application:
     name: user-service
   cloud:
     config:
       override-none: true
-    
+  rabbitmq:
+    host: 192.168.64.140
+    port: 5672
+    username: admin
+    password: admin
 server:
   port: 8101
   
